@@ -1,9 +1,8 @@
 const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-export const fetchData = async (endpoint) => {
+export const fetchData = async (endpoint: string) => {
     try {
         const response = await fetch(`${BASE_URL}/${endpoint}`);
-        // const response = await fetch("/example")
         if (!response.ok) {
             throw new Error(`Error: ${response.status}`);
         }
